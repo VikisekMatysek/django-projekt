@@ -1,0 +1,37 @@
+{% extends "rezervace/base.html" %}
+
+{% block content %}
+<div style="background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070') no-repeat center center; background-size: cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+    <div style="background: rgba(0,0,0,0.4); padding: 40px; border-radius: 10px;">
+        <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: 5px;">FITFLOW</h1>
+        <p style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Nejlepší tréninky v Opavě. Překonej své hranice.</p>
+        <div class="mt-4">
+            <a href="{% url 'rozvrh' %}" class="btn btn-outline-light px-4 py-2 me-2" style="font-weight: bold;">CHCI CVIČIT</a>
+            <a href="{% url 'kontakt' %}" class="btn btn-outline-light px-4 py-2" style="font-weight: bold;">KDE NÁS NAJDETE</a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="bg-white p-4 shadow-sm rounded">
+                <h5 style="color: #5d6344; font-weight: bold;">Moderní Gym</h5>
+                <p class="text-muted small">Špičkové stroje a vybavení pro váš maximální progres.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-white p-4 shadow-sm rounded">
+                <h5 style="color: #5d6344; font-weight: bold;">Skupinové Lekce</h5>
+                <p class="text-muted small">Od jógy po náročné HIIT tréninky pod vedením profíků.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-white p-4 shadow-sm rounded">
+                <h5 style="color: #5d6344; font-weight: bold;">Komunita</h5>
+                <p class="text-muted small">Nejsme jen fitko, jsme rodina. Přidej se k nám!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

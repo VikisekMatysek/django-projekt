@@ -1,0 +1,21 @@
+{% extends "rezervace/base.html" %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+    <h2 style="text-align: center;">Přihlášení do FitFlow</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #5d6344; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Přihlásit se
+        </button>
+    </form>
+    
+    <p style="text-align: center; margin-top: 15px;">
+        Nemáte účet? Kontaktujte recepci.
+    </p>
+</div>
+{% endblock %}

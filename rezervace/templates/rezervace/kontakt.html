@@ -1,0 +1,62 @@
+{% extends "rezervace/base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <div style="background-color: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto;">
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #5d6344; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Kontaktujte nás</h1>
+            <p style="color: #888; font-style: italic;">Máte dotaz? Jsme tu pro vás každý den.</p>
+            <div style="width: 60px; height: 5px; background-color: #d9e0a3; margin: 0 auto; border-radius: 5px;"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="margin-bottom: 30px;">
+                <h4 style="color: #5d6344; font-weight: bold; margin-bottom: 20px;">Kde nás najdete</h4>
+                <p style="margin-bottom: 10px;"><strong>FitFlow Studio</strong></p>
+                <p style="color: #666;">Ulice Sportovní 123<br>746 01 Opava</p>
+                
+                <hr style="border-top: 1px solid #eee; margin: 20px 0;">
+                
+                <p style="margin-bottom: 5px;"><strong>Telefon:</strong> <span style="color: #5d6344;">+420 123 456 789</span></p>
+                <p><strong>E-mail:</strong> <span style="color: #5d6344;">info@fitflow.cz</span></p>
+            </div>
+
+            <div class="col-md-6">
+                <div style="background-color: #fcfcfc; padding: 25px; border-radius: 15px; border-left: 5px solid #d9e0a3;">
+                    <h4 style="color: #5d6344; font-weight: bold; margin-bottom: 15px;">Provozní doba</h4>
+                    <table class="table table-borderless table-sm" style="margin-bottom: 0;">
+                        <tr>
+                            <td>Pondělí - Pátek:</td>
+                            <td style="text-align: right; font-weight: bold;">7:00 - 21:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sobota:</td>
+                            <td style="text-align: right; font-weight: bold;">8:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Neděle:</td>
+                            <td style="text-align: right; font-weight: bold;">9:00 - 16:00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="mailto:info@fitflow.cz" class="btn" style="background-color: #5d6344; color: white; border-radius: 50px; padding: 12px 30px; font-weight: bold; text-transform: uppercase; transition: 0.3s; border: none;">
+                Napište nám e-mail
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Malý efekt pro tlačítko */
+    .btn:hover {
+        background-color: #4a4f36 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}

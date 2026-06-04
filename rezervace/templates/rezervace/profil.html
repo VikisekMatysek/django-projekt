@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Můj Profil | FitFlow</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">DOMŮ</a>
+        <a href="/rozvrh/">ROZVRH</a>
+        <a href="/profil/">MŮJ PROFIL</a>
+        <a href="/kontakt/">KONTAKT</a>
+    </nav>
+
+    <div class="container">
+        <h1>Můj profil: {{ user.username }}</h1>
+        
+        <div class="profile-info">
+            <h3>Moje aktuální rezervace</h3>
+            {% if moje_rezervace %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lekce</th>
+                            <th>Datum a čas</th>
+                            <th>Vytvořeno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rez in moje_rezervace %}
+                        <tr>
+                            <td><strong>{{ rez.lekce.nazev }}</strong></td>
+                            <td>{{ rez.lekce.datum_cas|date:"d. m. Y H:i" }}</td>
+                            <td>{{ rez.vytvoreno|date:"d. m. H:i" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="alert">Zatím nemáte žádné aktivní rezervace. <a href="/rozvrh/">Vyberte si lekci v rozvrhu!</a></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends "rezervace/base.html" %}
+
+{% block content %}
+<div style="max-width: 450px; margin: 40px auto; padding: 30px; border: none; border-radius: 15px; background-color: white; shadow: 0 4px 15px rgba(0,0,0,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; color: #5d6344; font-weight: bold; margin-bottom: 25px;">Vytvořit účet</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; color: #333; margin-bottom: 5px;">
+                    {% if field.name == 'username' %}Uživatelské jméno
+                    {% elif field.name == 'password1' %}Heslo
+                    {% elif field.name == 'password2' %}Potvrzení hesla
+                    {% else %}{{ field.label }}{% endif %}
+                </label>
+                
+                {{ field }}
+                
+                {% if field.errors %}
+                    {% for error in field.errors %}
+                        <small style="color: red; display: block;">{{ error }}</small>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" style="width: 100%; padding: 12px; background-color: #5d6344; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+            Zaregistrovat se
+        </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+        <span style="color: #777;">Už máte účet?</span> 
+        <a href="{% url 'login' %}" style="color: #5d6344; font-weight: bold; text-decoration: none;">Přihlaste se</a>
+    </div>
+</div>
+
+<style>
+    /* Tohle zajistí, že inputy budou vypadat hezky a nebudou rozbité */
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+    /* Schováme ty dlouhé anglické nápovědy pod polem */
+    .helptext { display: none; }
+    ul.errorlist { list-style: none; padding: 0; color: red; font-size: 0.9em; }
+</style>
+{% endblock %}

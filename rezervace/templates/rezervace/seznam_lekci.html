@@ -1,0 +1,60 @@
+{% extends "rezervace/base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <div style="background-color: white; padding: 35px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        
+        <h2 style="color: #5d6344; font-weight: bold; text-align: center; margin-bottom: 30px; text-transform: uppercase;">
+            Aktuální rozvrh
+        </h2>
+
+        <div class="table-responsive">
+            <table class="table" style="vertical-align: middle;">
+                <thead style="border-bottom: 2px solid #5d6344;">
+                    <tr style="color: #5d6344; font-weight: bold;">
+                        <th>Lekce</th>
+                        <th>Kategorie</th>
+                        <th>Trenér</th>
+                        <th>Čas</th>
+                        <th>Kapacita</th>
+                        <th class="text-center">Akce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in lekce_list %}
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td style="font-weight: bold; color: #333; padding: 15px 10px;">{{ l.nazev }}</td>
+                        <td>
+                            <span style="background-color: #d9e0a3; color: #5d6344; padding: 4px 10px; border-radius: 5px; font-size: 0.85rem; font-weight: bold;">
+                                {{ l.kategorie }}
+                            </span>
+                        </td>
+                        <td style="color: #666;">{{ l.trener }}</td>
+                        <td style="font-weight: bold; color: #5d6344;">{{ l.datum_cas|date:"d. m. H:i" }}</td>
+                        <td>{{ l.kapacita }} míst</td>
+                        <td class="text-center">
+                            <a href="#" class="btn" style="background-color: #5d6344; color: white; border-radius: 5px; font-weight: bold; padding: 5px 15px; font-size: 0.9rem;">
+                                Rezervovat
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 40px; color: #999;">
+                            Aktuálně nejsou vypsány žádné lekce.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Jemné zvýraznění řádku při najetí myší */
+    tbody tr:hover {
+        background-color: #fbfbfb;
+    }
+</style>
+{% endblock %}
