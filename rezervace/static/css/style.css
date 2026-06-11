@@ -12,7 +12,6 @@ body {
     color: var(--dark);
 }
 
-/* Navigace */
 nav {
     background-color: var(--dark);
     padding: 20px;
@@ -33,7 +32,6 @@ nav a {
 
 nav a:hover { color: var(--green); }
 
-/* VELKÝ ÚVOD (HERO) */
 .hero-section {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -78,7 +76,6 @@ nav a:hover { color: var(--green); }
     border-radius: 5px;
 }
 
-/* INFOGRID */
 .info-grid {
     display: flex;
     justify-content: center;
@@ -98,7 +95,6 @@ nav a:hover { color: var(--green); }
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* Tabulka pro rozvrh */
 .container { padding: 50px; max-width: 1000px; margin: 0 auto; }
 table { width: 100%; border-collapse: collapse; background: white; }
 th { background: var(--green); color: white; padding: 15px; }
