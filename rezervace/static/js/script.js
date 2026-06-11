@@ -4,7 +4,6 @@ function rezervovat(id) {
 
     if (currentCap > 0) {
         if (confirm("Chcete si zarezervovat místo na této lekci?")) {
-            // Snížíme číslo v tabulce o 1
             currentCap--;
             capElement.innerText = currentCap;
             alert("Rezervace byla úspěšně vytvořena!");
